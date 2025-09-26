@@ -2,6 +2,8 @@ import { Button } from "@ui-kit/Button";
 import { Card, CardBody, CardFooter, CardHeader } from "@ui-kit/Card";
 import { Input } from "@ui-kit/Input";
 import { LinkApp } from "@ui-kit/LinkApp";
+import { Loading } from "@ui-kit/Loading";
+import { Notice } from "@ui-kit/Notice";
 
 
 export default function Home() {
@@ -57,6 +59,21 @@ export default function Home() {
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>
+      </div>
+
+      <div>
+        <Notice message="Hello world" variant={"success"} />
+        <Notice message="Hello world" variant={"error"} />
+        <Notice message="Hello world" variant={"info"} />
+        <Notice message="Hello world" variant={"warning"} />
+      </div>
+
+      <div className="flex gap-3 justify-center items-center">
+        <Loading variant={"primary"} />
+        <Loading variant={"secondary"} />
+        <Loading variant={"success"} />
+        <Loading variant={"danger"} />
+        <Loading variant={"ghost"} />
       </div>
     </>
   );

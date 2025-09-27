@@ -24,7 +24,8 @@
       "@ui-kit/*": ["src/common/ui-kit/*"],
       "@app/*": ["src/app/*"],
       "@modules/*": ["src/modules/*"],
-      "@components/*": ["src/common/components/*"],
+      "@features/*": ["src/common/features/*"],
+      "@widgets/*": ["src/common/widgets/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

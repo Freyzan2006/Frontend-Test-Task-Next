@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { type VariantProps } from 'class-variance-authority';
-import { Button } from '@ui-kit/Button';
+import { Button } from '@ui-kit/ui/Button';
 import { noticeVariants, progressBarVariants } from './variants';
 
 

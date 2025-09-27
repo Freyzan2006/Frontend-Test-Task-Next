@@ -13,6 +13,8 @@ interface ButtonProps
   className?: string;
   loading?: boolean;
   icon?: React.ReactNode;
+  onClick?: () => void;
+  disabled?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(

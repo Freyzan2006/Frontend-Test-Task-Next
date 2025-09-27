@@ -27,10 +27,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     children, 
     disabled,
     ...props 
-  }, ref) => {
+  }) => {
     return (
       <button
-        ref={ref}
+
         className={buttonVariants({ variant, size, className })}
         disabled={disabled || loading}
         {...props}

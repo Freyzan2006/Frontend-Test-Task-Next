@@ -74,9 +74,9 @@ export const SideBarContainer: React.FC = () => {
     },
   };
 
-  return (
-    <>
-      <SideBar items={linksConfig.sidebar.items} header={linksConfig.sidebar.header} footer={linksConfig.sidebar.footer} />
-    </>
-  )
+  return <SideBar 
+    items={linksConfig.sidebar.items} 
+    header={linksConfig.sidebar.header} 
+    footer={linksConfig.sidebar.footer} 
+  />
 }

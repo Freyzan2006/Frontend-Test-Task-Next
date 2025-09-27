@@ -1,0 +1,136 @@
+"use client";
+
+import React from 'react';
+import { Footer } from './Footer';
+
+
+const FooterContainer: React.FC = () => {
+  const companyInfo = {
+    name: 'Моя компания',
+    description: 'Создаем инновационные решения для вашего бизнеса. Профессиональный подход и качественный сервис.',
+    logo: (
+      <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+        MC
+      </div>
+    ),
+    copyright: '© 2024 Моя компания. Все права защищены.'
+  };
+
+  const footerSections = [
+    {
+      title: 'Продукты',
+      links: [
+        { label: 'Веб-приложения', href: '/products/web' },
+        { label: 'Мобильные приложения', href: '/products/mobile' },
+        { label: 'Десктопные решения', href: '/products/desktop' },
+        { label: 'Облачные сервисы', href: '/products/cloud' },
+      ]
+    },
+    {
+      title: 'Компания',
+      links: [
+        { label: 'О нас', href: '/about' },
+        { label: 'Команда', href: '/team' },
+        { label: 'Вакансии', href: '/careers' },
+        { label: 'Новости', href: '/news' },
+      ]
+    },
+    {
+      title: 'Поддержка',
+      links: [
+        { label: 'Документация', href: '/docs' },
+        { label: 'База знаний', href: '/knowledge-base' },
+        { label: 'Форум', href: '/forum' },
+        { label: 'Контакты', href: '/contact' },
+      ]
+    }
+  ];
+
+  const socialLinks = [
+    {
+      label: 'Telegram',
+      href: 'https://t.me/company',
+      external: true,
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+        </svg>
+      )
+    },
+    {
+      label: 'VK',
+      href: 'https://vk.com/company',
+      external: true,
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M15.073 2H8.937C3.332 2 2 3.333 2 8.927v6.136C2 20.667 3.323 22 8.937 22h6.136C20.667 22 22 20.677 22 15.063V8.937C22 3.332 20.677 2 15.073 2zm1.354 14.927h-1.323c-.5 0-.708-.396-1.666-1.354-.854-.854-1.229-.146-1.229.146v1.208c0 .396-.313.5-.521.5-1.042 0-3.125-1.042-4.375-3.125-1.25-2.083-1.667-3.646-1.667-3.646 0-.208.104-.417.417-.417h1.333c.5 0 .625.208.792.625.938 2.396 2.292 3.542 2.5 3.542.208 0 .208-.104.208-.417v-2.396c-.104-1.042-1.042-1.042-1.042-1.042h-.208c-.208 0-.417.104-.417.313 0 .417.521.729.521 2.396v1.667c0 .417-.208.625-.625.625-1.146 0-2.813-1.458-3.438-4.375-.104-.313 0-.521.313-.521h1.458c.417 0 .521.208.625.521.521 1.667 1.458 2.813 1.667 2.813.208.208.208.104.208-.313V9.438c0-.729-.417-.729-.417-.729h-.313c-.208 0-.417.104-.417.313 0 .417.417 1.875.417 2.083 0 .208-.104.313-.313.313-.417 0-1.146-.417-1.667-1.667-.208-.521-.417-.625-.417-.625H9.25c-.313 0-.417.208-.417.417 0 .417.729 2.396 2.083 4.063 1.354 1.667 3.125 1.667 3.125 1.667h.313c.208 0 .208-.104.208-.417v-1.458c0-.417.104-.521.417-.521.208 0 .625.104 1.458.938.938.938 1.042 1.354 1.354 1.354h1.667c.313 0 .417-.208.313-.521-.208-.729-1.042-1.563-1.667-2.083-.208-.208-.417-.417-.208-.729.208-.208.729-.729 1.042-1.146.729-.729 1.354-1.563 1.458-2.083.104-.313-.104-.521-.417-.521z"/>
+        </svg>
+      )
+    }
+  ];
+
+  const subscription = {
+    title: 'Будьте в курсе новостей',
+    description: 'Подпишитесь на рассылку, чтобы первыми узнавать о новых возможностях и обновлениях.',
+    buttonText: 'Подписаться',
+    onSubscribe: (email: string) => {
+      console.log('Subscribed with:', email);
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      {/* Основной контент страницы */}
+      <main className="flex-1 p-8">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Пример страницы с Footer
+          </h1>
+          <p className="text-gray-600 dark:text-gray-300 mb-8">
+            Это демонстрационная страница с различными вариантами футера внизу.
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <h2 className="text-xl font-semibold mb-2">Контент блок 1</h2>
+              <p>Здесь может быть любой контент вашего приложения.</p>
+            </div>
+            <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <h2 className="text-xl font-semibold mb-2">Контент блок 2</h2>
+              <p>Footer будет всегда внизу страницы.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer вариант 1 - Основной */}
+      <Footer
+        company={companyInfo}
+        sections={footerSections}
+        social={socialLinks}
+        variant="primary"
+        size="lg"
+      />
+
+      {/* Footer вариант 2 - Компактный */}
+      {/* <Footer
+        company={{
+          name: 'Моя компания',
+          copyright: '© 2024 Все права защищены.'
+        }}
+        variant="secondary"
+        size="sm"
+      /> */}
+
+      {/* Footer вариант 3 - С подпиской */}
+      {/* <Footer
+        company={companyInfo}
+        subscription={subscription}
+        variant="ghost"
+        size="md"
+      /> */}
+    </div>
+  );
+}
+
+export { FooterContainer };

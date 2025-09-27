@@ -11,6 +11,9 @@ import React, { useState } from 'react';
 import { SideBarItem } from './SideBarItem';
 import { SideBarIcon } from '@ui-kit/icons/side-bar.icon';
 import { ToggleTheme } from '@features/toggle-theme';
+import { SideBarHeader } from './SideBarHeader';
+import { SideBarBody } from './SidebarBody';
+import { SideBarFooter } from './SideBarFooter';
 
 
 export interface ISideBarItem {
@@ -123,23 +126,7 @@ const SideBar: React.FC<SideBarProps> = ({
       >
         {/* Header */}
         {header && !isCollapsed && (
-          <div className="p-6 border-b border-gray-200 dark:border-gray-700">
-            <div className="flex items-center gap-3">
-              {header.avatar && (
-                <div className="flex-shrink-0">
-                  {header.avatar}
-                </div>
-              )}
-              <div className="flex-1 min-w-0">
-                <Title level="h4" className="truncate">{header.title}</Title>
-                {header.subtitle && (
-                  <Text variant="muted" size="sm" className="truncate">
-                    {header.subtitle}
-                  </Text>
-                )}
-              </div>
-            </div>
-          </div>
+          <SideBarHeader header={header} />
         )}
 
         {/* Toggle Button */}
@@ -150,44 +137,16 @@ const SideBar: React.FC<SideBarProps> = ({
             onClick={handleToggle}
             className="absolute top-4 right-4 z-10 w-8 h-8 p-0"
           >
-
             <SideBarIcon />
           </Button>
         )}
 
         {/* Navigation Items */}
-        <nav className="flex-1 overflow-y-auto overflow-x-hidden py-4">
-          <div className="space-y-1 px-4 flex flex-col">
-            {items.map((item) => (
-              <SideBarItem
-                key={item.id}
-                item={item}
-                collapsed={isCollapsed}
-                onItemClick={item.onClick}
-              />
-            ))}
-          </div>
-        </nav>
+        <SideBarBody items={items} isCollapsed={isCollapsed} />
 
         {/* Footer */}
         {footer && !isCollapsed && (
-          <div className=" p-4 border-t border-gray-200 dark:border-gray-700">
-            <Button
-              variant="ghost"
-              className="w-full justify-start"
-              icon={footer.icon}
-              onClick={footer.onClick}
-            >
-              {footer.label}
-            </Button>
-
-            <div>
-              <Text variant="muted" size="sm" className="mt-2">
-                Тема
-              </Text>
-              <ToggleTheme />
-            </div>
-          </div>
+         <SideBarFooter footer={footer} />
         )}
 
         {/* Collapsed Header Icon */}
@@ -204,4 +163,4 @@ const SideBar: React.FC<SideBarProps> = ({
 };
 
 export { SideBar };
-export type { SideBarProps, SideBarItem };
+export type { SideBarProps };

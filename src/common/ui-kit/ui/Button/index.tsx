@@ -17,7 +17,7 @@ interface ButtonProps
   disabled?: boolean;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const Button: React.FC<ButtonProps> = (
   ({ 
     className, 
     variant, 

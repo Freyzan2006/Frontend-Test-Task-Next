@@ -1,5 +1,6 @@
 
-import { SideBarContainer } from "@widgets/sidebar";
+import { PhotoList } from "@modules/photo";
+
 
 
 
@@ -8,7 +9,9 @@ import { SideBarContainer } from "@widgets/sidebar";
 export default function Home() {
 
  
-  return <section>
-    Hello
-  </section>
+  return (
+    <section>
+      <PhotoList />
+    </section>
+  )
 }

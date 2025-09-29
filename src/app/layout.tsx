@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "src/common/providers/theme-provider";
+import { ThemeProvider } from "@providers/theme-provider";
 import { Layout } from "@widgets/Layout";
-import { ContainerProvider } from "src/common/contexts/ContainerContext";
+import { PhotoContainerProvider } from "@modules/photo";
+import { QueryProvider } from "@providers/query-provider";
 
 
 
@@ -37,11 +38,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <ContainerProvider>
-            <Layout>
-              {children}
-            </Layout>
-          </ContainerProvider>
+          <QueryProvider>
+            <PhotoContainerProvider>
+              <Layout>
+                {children}
+              </Layout>
+            </PhotoContainerProvider>
+          </QueryProvider>  
         </ThemeProvider>
       </body>
     </html>

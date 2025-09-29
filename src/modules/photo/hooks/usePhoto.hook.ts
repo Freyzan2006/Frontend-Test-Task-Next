@@ -1,36 +1,17 @@
-"use client";
+'use client';
 
-import { useInject } from "@hooks/useInject.hook";
-import { PhotoService } from "../service/photo.service";
-import { useEffect, useState } from "react";
-
-
+import { useQuery } from '@tanstack/react-query';
+import { PhotoService } from '../service/photo.service';
+import { usePhotoContainer } from '../di';
 
 
-export const usePhoto = () => {
-  const [photos, setPhotos] = useState<string[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const photoService = useInject(PhotoService); 
+export const usePhoto = (id: string) => {
+    const container = usePhotoContainer();
+    const photoService = container.get(PhotoService);
 
-  useEffect(() => {
-    const loadPhotos = async () => {
-      try {
-        setLoading(true);
-        const photos = await photoService.findAllPhoto();
-        setPhotos(photos);
-      } catch (error) {
-        setError((error as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    loadPhotos();
-  }, [photoService]);
-
-  return {
-    data: photos,
-    loading: loading,
-    error: error, 
-  };
+  return useQuery({
+    queryKey: ['photos', id],
+    queryFn: () => photoService.findPhoto(id),
+    enabled: !!id, 
+  });
 };

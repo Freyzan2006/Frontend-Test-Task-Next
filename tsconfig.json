@@ -27,7 +27,8 @@
       "@modules/*": ["src/modules/*"],
       "@features/*": ["src/common/features/*"],
       "@widgets/*": ["src/common/widgets/*"],
-      "@hooks/*": ["src/common/hooks/*"]
+      "@hooks/*": ["src/common/hooks/*"],
+      "@providers/*": ["src/common/providers/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

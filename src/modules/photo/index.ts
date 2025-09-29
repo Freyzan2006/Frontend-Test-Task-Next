@@ -1,6 +1,5 @@
 
 
-export { PhotoService } from './service/photo.service';
-export { PhotoRepository } from './repository/photo.repo';
+export { PhotoContainerProvider } from "./di/provider";
 
 export { PhotoList } from "./widgets/PhotoList";

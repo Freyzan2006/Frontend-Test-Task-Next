@@ -1,7 +1,7 @@
 
 
 
-export default function Albums() {
+export default function Photos() {
     return (
         <></>
     )

@@ -1,5 +1,6 @@
+import { PhotoFrame } from "@modules/photo";
 
-import { PhotoList } from "@modules/photo";
+
 
 
 
@@ -10,8 +11,8 @@ export default function Home() {
 
  
   return (
-    <section>
-      <PhotoList />
-    </section>
+    <div>
+      <PhotoFrame />
+    </div>
   )
 }

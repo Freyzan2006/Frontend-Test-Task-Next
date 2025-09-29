@@ -2,4 +2,4 @@
 
 export { PhotoContainerProvider } from "./di/provider";
 
-export { PhotoList } from "./widgets/PhotoList";
+export { PhotoFrame } from "./widgets/PhotoFrame";

@@ -2,6 +2,7 @@
 
 bun.lock
 package-lock.json
+.vscode
 
 # dependencies
 /node_modules

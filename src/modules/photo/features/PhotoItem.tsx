@@ -9,6 +9,7 @@ import { Title } from "@ui-kit/ui/Font";
 import Image from "next/image";
 import { AlertGroup } from "@ui-kit/ui/Alert";
 import { Notice } from "@ui-kit/ui/Notice";
+import { LinkApp } from "@ui-kit/ui/LinkApp";
 
 interface IPhotoItemProps {
     photo: Photo
@@ -32,13 +33,21 @@ export const PhotoItem: React.FC<IPhotoItemProps> = ({ photo }) => {
                 height={photo.previewHeight}
             />
             <Title level="h3">{photo.user}</Title>
-            <Button
-            onClick={() => deletePhotoMutation.mutate(photo.id)}
-            disabled={deletePhotoMutation.isPending}
-            variant={"danger"}
-            >
-            {deletePhotoMutation.isPending ? <Loading variant={"danger"} /> : 'Удалить'}
-            </Button>
+            <div className="flex justify-center items-center gap-3">
+                <Button variant={"ghost"}>
+                    <LinkApp href={`/photo/${photo.id}`} variant={"underline"}>
+                        Подробнее
+                    </LinkApp>
+                </Button>
+                <Button
+                onClick={() => deletePhotoMutation.mutate(photo.id)}
+                disabled={deletePhotoMutation.isPending}
+                variant={"danger"}
+                >
+                {deletePhotoMutation.isPending ? <Loading variant={"danger"} /> : 'Удалить'}
+                </Button>
+            </div>
+
         </Card>
     )
 }

@@ -2,14 +2,21 @@ import { ArrowLeftIcon } from "@ui-kit/icons/arrow/arrow-left.icon";
 import { WarningIcon } from "@ui-kit/icons/warning.icon";
 import { Alert, AlertGroup } from "@ui-kit/ui/Alert";
 import { Card } from "@ui-kit/ui/Card";
-import { Text } from "@ui-kit/ui/Font/Text";
+
 import { Title } from "@ui-kit/ui/Font/Title";
 import { LinkApp } from "@ui-kit/ui/LinkApp";
-import Image from "next/image";
 
 
 
- export default function NotFound() {
+
+
+
+
+ export default async function NotFound() {
+
+
+
+
     return (
         <section className="flex justify-center items-center h-screen">
             <Card variant={"primary"} className="flex flex-col items-center gap-3" >

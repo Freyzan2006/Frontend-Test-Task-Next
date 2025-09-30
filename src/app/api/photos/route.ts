@@ -6,7 +6,6 @@ export async function GET(request: NextRequest) {
     const env = new Environment();
     const apiKey = env.get('NEXT_PUBLIC_API_PIXABAY_KEY');
 
-    console.log(apiKey)
     
     if (!apiKey) {
       return NextResponse.json(

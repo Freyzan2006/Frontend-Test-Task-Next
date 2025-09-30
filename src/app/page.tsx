@@ -1,4 +1,5 @@
 import { PhotoFrame } from "@modules/photo";
+import { Upload } from "@ui-kit/widget/Upload";
 
 
 

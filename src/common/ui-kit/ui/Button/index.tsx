@@ -13,7 +13,7 @@ interface ButtonProps
   className?: string;
   loading?: boolean;
   icon?: React.ReactNode;
-  onClick?: () => void;
+  onClick?: () => void | Promise<void>;
   disabled?: boolean;
 }
 
@@ -30,7 +30,7 @@ const Button: React.FC<ButtonProps> = (
   }) => {
     return (
       <button
-
+        type="button"
         className={buttonVariants({ variant, size, className })}
         disabled={disabled || loading}
         {...props}

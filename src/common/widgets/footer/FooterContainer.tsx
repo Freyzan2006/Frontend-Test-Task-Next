@@ -103,32 +103,15 @@ const FooterContainer: React.FC = () => {
         </div>
       </main>
 
-      {/* Footer вариант 1 - Основной */}
+
       <Footer
         company={companyInfo}
         sections={footerSections}
         social={socialLinks}
         variant="primary"
-        size="lg"
-      />
-
-      {/* Footer вариант 2 - Компактный */}
-      {/* <Footer
-        company={{
-          name: 'Моя компания',
-          copyright: '© 2024 Все права защищены.'
-        }}
-        variant="secondary"
-        size="sm"
-      /> */}
-
-      {/* Footer вариант 3 - С подпиской */}
-      {/* <Footer
-        company={companyInfo}
-        subscription={subscription}
-        variant="ghost"
-        size="md"
-      /> */}
+        size="lg" 
+        items={[]}      
+        />
     </div>
   );
 }

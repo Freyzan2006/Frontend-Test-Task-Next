@@ -28,7 +28,7 @@ interface FooterProps {
     copyright?: string;
   };
   sections?: FooterSection[];
-  social?: {
+  social: {
     label: string;
     href: string;
     icon: React.ReactNode;
@@ -42,6 +42,7 @@ interface FooterProps {
   variant?: 'primary' | 'secondary' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
+  items: FooterLink[]
 }
 
 const variantStyles = {
@@ -117,7 +118,7 @@ const Footer: React.FC<FooterProps> = ({
                     <LinkApp
                       key={index}
                       href={item.href}
-                      external={item.external}
+                      external
                       variant="ghost"
                       className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                       title={item.label}

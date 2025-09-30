@@ -264,10 +264,7 @@ const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
               size="sm"
               className="mt-4"
               disabled={disabled}
-              onClick={(e) => {
-                e.stopPropagation();
-                triggerFileInput();
-              }}
+              onClick={triggerFileInput}
             >
               Выбрать файлы
             </Button>
@@ -311,16 +308,10 @@ const Upload = React.forwardRef<HTMLInputElement, UploadProps>(
                     variant="ghost"
                     size="sm"
                     className="ml-2 flex-shrink-0"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleRemoveFile(fileInfo.id);
-                    }}
-                    icon={
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    }
-                  />
+                    onClick={() => handleRemoveFile(fileInfo.id)}
+                    icon={<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>} children={undefined} />
                 )}
               </div>
             ))}

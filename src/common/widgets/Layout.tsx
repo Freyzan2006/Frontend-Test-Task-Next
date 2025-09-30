@@ -11,7 +11,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <SideBarContainer />
         <HeaderContainer />
         <Container>
-            <main>
+            <main className="mt-4">
                 {children}
             </main>
         </Container>

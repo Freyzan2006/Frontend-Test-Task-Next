@@ -4,13 +4,12 @@
 
 import { Button } from '@ui-kit/ui/Button';
 import { Card } from '@ui-kit/ui/Card';
-import { Text } from '@ui-kit/ui/Font/Text';
-import { Title } from '@ui-kit/ui/Font/Title';
+
 import { Loading } from '@ui-kit/ui/Loading';
 import React, { useState } from 'react';
-import { SideBarItem } from './SideBarItem';
+
 import { SideBarIcon } from '@ui-kit/icons/side-bar.icon';
-import { ToggleTheme } from '@features/toggle-theme';
+
 import { SideBarHeader } from './SideBarHeader';
 import { SideBarBody } from './SidebarBody';
 import { SideBarFooter } from './SideBarFooter';
@@ -61,7 +60,7 @@ const SideBar: React.FC<SideBarProps> = ({
   width = 'md',
   collapsible = true,
 }) => {
-  const [internalIsOpen, setInternalIsOpen] = useState(true);
+  const [internalIsOpen, setInternalIsOpen] = useState(false);
   const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen;
   const isCollapsed = collapsible && !isOpen;
 

@@ -30,12 +30,12 @@ export const SideBarContainer: React.FC = () => {
     },
     {
       id: 'albums',
-      label: 'Альбомы',
-      href: '/albums',
+      label: 'Фотогалерея',
+      href: '/photos',
       icon: (
         <AlbumsIcon />
       ),
-      active: path === '/albums',
+      active: path === '/photos',
     },
     {
       id: "profile",

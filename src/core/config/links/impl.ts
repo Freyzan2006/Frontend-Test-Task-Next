@@ -49,9 +49,9 @@ export const linksConfig: ILinks = {
                 icon: AlbumsIcon,
             },
             {
-                id: "profile",
-                label: "Профиль",
-                href: "/profile",
+                id: "contacts",
+                label: "Контакты",
+                href: "/contacts",
                 icon: UserIcon,
             }
         ],

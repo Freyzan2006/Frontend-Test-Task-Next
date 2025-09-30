@@ -36,7 +36,7 @@ export const PhotoItem: React.FC<IPhotoItemProps> = ({ photo }) => {
             <Title level="h3">{photo.user}</Title>
             <div className="flex justify-center items-center gap-3">
                 <Button variant={"ghost"}>
-                    <LinkApp href={`/photo/${photo.id}`} variant={"underline"}>
+                    <LinkApp href={`/photos/${photo.id}`} variant={"underline"}>
                         Подробнее
                     </LinkApp>
                 </Button>

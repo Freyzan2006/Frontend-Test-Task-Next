@@ -79,12 +79,12 @@ const Intro: React.FC<IntroProps> = ({
   primaryAction = {
     label: "Начать загрузку",
     onClick: () => console.log("Начать загрузку"),
-    href: "/upload"
+    href: "/photos/upload"
   },
   secondaryAction = {
     label: "Посмотреть галерею",
     onClick: () => console.log("Посмотреть галерею"),
-    href: "/gallery"
+    href: "/photos"
   },
   stats = [
     { value: "10K+", label: "Фотографий" },
@@ -107,7 +107,7 @@ const Intro: React.FC<IntroProps> = ({
           variant={variant === 'primary' ? 'primary' : 'secondary'}
           size="lg"
           onClick={action.onClick}
-          className="inline-flex items-center gap-2"
+          className="flex items-center justify-center gap-2 w-full"
         >
           {variant === 'primary' && (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

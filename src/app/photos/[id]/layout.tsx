@@ -1,11 +1,10 @@
 import { ChildrenType } from "@core/types/children.type";
 
 
-
-export default function AboutLayout({
+export default function PhotosLayout({
     children,
 }: ChildrenType) {
-return (
-    <>{children}</>
-);
+    return (
+        <>{children}</>
+    );
 }

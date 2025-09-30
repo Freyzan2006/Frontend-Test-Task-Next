@@ -19,9 +19,13 @@ npm install || yarn install || pnpm install || bun install
 6. Скопировать в файл .env:
 ```env
 NEXT_PUBLIC_API_PIXABAY_KEY=<YOUR_API_KEY>
+NEXT_PUBLIC_API_URL=<Домен вашего API>
 ```
 7. Запустить приложение:
 ```
 npm run dev || yarn dev || pnpm dev || bun run dev
 ```
 8. Открыть в браузере [http://localhost:3000](http://localhost:3000)
+
+
+[Проект](https://frontend-test-task-next.vercel.app/)

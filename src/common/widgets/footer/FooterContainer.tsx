@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Footer } from './Footer';
+import { Logo } from '@ui/Logo';
 
 
 const FooterContainer: React.FC = () => {
@@ -9,9 +10,7 @@ const FooterContainer: React.FC = () => {
     name: 'Моя компания',
     description: 'Создаем инновационные решения для вашего бизнеса. Профессиональный подход и качественный сервис.',
     logo: (
-      <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">
-        MC
-      </div>
+      <Logo />
     ),
     copyright: '© 2024 Моя компания. Все права защищены.'
   };
@@ -80,28 +79,7 @@ const FooterContainer: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Основной контент страницы */}
-      <main className="flex-1 p-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            Пример страницы с Footer
-          </h1>
-          <p className="text-gray-600 dark:text-gray-300 mb-8">
-            Это демонстрационная страница с различными вариантами футера внизу.
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-              <h2 className="text-xl font-semibold mb-2">Контент блок 1</h2>
-              <p>Здесь может быть любой контент вашего приложения.</p>
-            </div>
-            <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-              <h2 className="text-xl font-semibold mb-2">Контент блок 2</h2>
-              <p>Footer будет всегда внизу страницы.</p>
-            </div>
-          </div>
-        </div>
-      </main>
+     
 
 
       <Footer

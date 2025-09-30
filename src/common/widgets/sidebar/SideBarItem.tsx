@@ -5,7 +5,7 @@ import { Button } from '@ui-kit/ui/Button';
 
 import { LinkApp } from '@ui-kit/ui/LinkApp';
 import { Text } from '@ui-kit/ui/Font/Text';
-import { ISideBarItem } from '@core/config/config.core';
+import { ISideBarItem } from '@core/config/links';
 
 
 

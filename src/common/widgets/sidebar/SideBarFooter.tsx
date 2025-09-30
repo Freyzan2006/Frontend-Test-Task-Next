@@ -1,6 +1,6 @@
 "use client";
 
-import { ISideBarLinkFooterProps } from "@core/config/config.core";
+import { ISideBarLinkFooterProps } from "@core/config/links";
 import { ToggleTheme } from "@features/toggle-theme";
 import { Button } from "@ui-kit/ui/Button";
 import { Text } from "@ui-kit/ui/Font/Text";

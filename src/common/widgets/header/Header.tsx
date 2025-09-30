@@ -10,7 +10,7 @@ import { LinkApp } from '@ui-kit/ui/LinkApp';
 
 import { HeaderNav } from './HeaderNav';
 import { usePathname } from 'next/navigation';
-import { HeaderNavItem, linksConfig } from '@core/config/config.core';
+import { HeaderNavItem, linksConfig } from '@core/config/links';
 
 
 

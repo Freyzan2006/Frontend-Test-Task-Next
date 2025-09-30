@@ -13,7 +13,7 @@ import { SideBarIcon } from '@ui-kit/icons/side-bar.icon';
 import { SideBarHeader } from './SideBarHeader';
 import { SideBarBody } from './SidebarBody';
 import { SideBarFooter } from './SideBarFooter';
-import { ISideBarItem, ISideBarLinkFooterProps, ISideBarLinkHeaderProps } from '@core/config/config.core';
+import { ISideBarItem, ISideBarLinkFooterProps, ISideBarLinkHeaderProps } from '@core/config/links';
 
 
 

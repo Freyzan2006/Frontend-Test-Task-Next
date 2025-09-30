@@ -2,7 +2,7 @@
 
 
 
-import { ISideBarItem } from "@core/config/config.core";
+import { ISideBarItem } from "@core/config/links";
 import { SideBarItem } from "./SideBarItem";
 
 

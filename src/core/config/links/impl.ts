@@ -3,46 +3,11 @@ import { HomeIcon } from "@ui-kit/icons/home.icon"
 import { SettingIcon } from "@ui-kit/icons/setting.icon";
 import { UserIcon } from "@ui-kit/icons/user.icon"
 import { Logo } from "@ui/Logo";
-import { JSXElementConstructor } from "react";
+import { HeaderNavItem, ISideBarItem, ISideBarLinkFooterProps, ISideBarLinkHeaderProps } from "./interface";
 
 
-export interface HeaderNavItem {
-    label: string;
-    href: string;
-    active?: boolean;
-    icon?: React.ReactNode;
-}
 
-export interface ISideBarItem {
-    id: string;
-    label: string;
-    icon?: React.FC | React.ComponentType;
-    href?: string;
-    onClick?: () => void;
-    active?: boolean;
-    disabled?: boolean;
-    badge?: string | number;
-  }
 
-export interface ISideBarLinkItemProps {
-    id: string,
-    label: string,
-    href: string,
-    icon: React.FC,
-    active?: boolean
-}
-
-export interface ISideBarLinkHeaderProps {
-    title: string;
-    subtitle: string
-    avatar: React.FC
-}
-
-export interface ISideBarLinkFooterProps {
-    label: string;
-    onClick: () => void
-    icon: React.FC
-}
 
 interface ISideBar {
     header: ISideBarLinkHeaderProps,

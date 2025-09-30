@@ -5,7 +5,7 @@ import { SideBar } from "./Sidebar";
 
 import { usePathname } from "next/navigation";
 
-import { linksConfig } from "@core/config/config.core";
+import { linksConfig } from "@core/config/links";
 import { useMemo } from "react";
 
 

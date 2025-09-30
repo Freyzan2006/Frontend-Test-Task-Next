@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { LinkApp } from '@ui-kit/ui/LinkApp';
-import { HeaderNavItem } from '@core/config/config.core';
+import { HeaderNavItem } from '@core/config/links';
 
 
 

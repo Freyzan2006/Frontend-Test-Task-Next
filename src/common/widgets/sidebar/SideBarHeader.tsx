@@ -1,6 +1,6 @@
 "use client";
 
-import { ISideBarLinkHeaderProps } from "@core/config/config.core";
+import { ISideBarLinkHeaderProps } from "@core/config/links";
 import { Text } from "@ui-kit/ui/Font/Text";
 import { Title } from "@ui-kit/ui/Font/Title";
 

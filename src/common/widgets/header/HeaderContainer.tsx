@@ -2,7 +2,7 @@
 
 import React, { useMemo } from 'react';
 import { Header } from '@widgets/header';
-import { HeaderNavItem, linksConfig } from '@core/config/config.core';
+import { HeaderNavItem, linksConfig } from '@core/config/links';
 import { usePathname } from 'next/navigation';
 
 

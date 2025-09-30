@@ -58,7 +58,8 @@ const Loading = React.forwardRef<HTMLDivElement, LoadingProps>(
       sm: 'text-sm',
       md: 'text-base',
       lg: 'text-lg',
-      xl: 'text-xl'
+      xl: 'text-xl',
+      xxl: 'text-2xl'
     };
 
     const containerClass = `inline-flex ${positions[textPosition]} ${centered ? 'justify-center' : ''}`;

@@ -29,6 +29,7 @@
       "@widgets/*": ["src/common/widgets/*"],
       "@hooks/*": ["src/common/hooks/*"],
       "@providers/*": ["src/common/providers/*"],
+      "@ui/*": ["src/common/ui/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -1,7 +1,10 @@
 "use client";
 
-import { ISideBarItem } from "./Sidebar";
+
+
+import { ISideBarItem } from "@core/config/config.core";
 import { SideBarItem } from "./SideBarItem";
+
 
 interface ISideBarBodyProps {
     items: ISideBarItem[];

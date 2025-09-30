@@ -1,14 +1,11 @@
 "use client";
 
+import { ISideBarLinkHeaderProps } from "@core/config/config.core";
 import { Text } from "@ui-kit/ui/Font/Text";
 import { Title } from "@ui-kit/ui/Font/Title";
 
 interface SideBarHeaderProps {
-    header: {
-        title: string;
-        subtitle?: string;
-        avatar?: React.ReactNode;
-    };
+    header: ISideBarLinkHeaderProps;
 }
 
 export const SideBarHeader: React.FC<SideBarHeaderProps> = ({ header }) => {
@@ -17,7 +14,7 @@ export const SideBarHeader: React.FC<SideBarHeaderProps> = ({ header }) => {
         <div className="flex items-center gap-3">
             {header.avatar && (
             <div className="flex-shrink-0">
-                {header.avatar}
+                {<header.avatar />}
             </div>
             )}
             <div className="flex-1 min-w-0">

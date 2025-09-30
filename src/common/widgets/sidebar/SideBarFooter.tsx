@@ -1,15 +1,12 @@
 "use client";
 
+import { ISideBarLinkFooterProps } from "@core/config/config.core";
 import { ToggleTheme } from "@features/toggle-theme";
 import { Button } from "@ui-kit/ui/Button";
 import { Text } from "@ui-kit/ui/Font/Text";
 
 interface SideBarFooterProps {
-  footer: {
-      label: string;
-      onClick?: () => void;
-      icon?: React.ReactNode;
-  };
+  footer: ISideBarLinkFooterProps;
 }
 
 export const SideBarFooter: React.FC<SideBarFooterProps> = ({ footer }) => {
@@ -18,7 +15,7 @@ export const SideBarFooter: React.FC<SideBarFooterProps> = ({ footer }) => {
             <Button
               variant="ghost"
               className="w-full justify-start"
-              icon={footer.icon}
+              icon={<footer.icon />}
               onClick={footer.onClick}
             >
               {footer.label}

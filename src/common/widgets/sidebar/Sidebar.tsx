@@ -13,18 +13,10 @@ import { SideBarIcon } from '@ui-kit/icons/side-bar.icon';
 import { SideBarHeader } from './SideBarHeader';
 import { SideBarBody } from './SidebarBody';
 import { SideBarFooter } from './SideBarFooter';
+import { ISideBarItem, ISideBarLinkFooterProps, ISideBarLinkHeaderProps } from '@core/config/config.core';
 
 
-export interface ISideBarItem {
-  id: string;
-  label: string;
-  icon?: React.ReactNode;
-  href?: string;
-  onClick?: () => void;
-  active?: boolean;
-  disabled?: boolean;
-  badge?: string | number;
-}
+
 
 
 interface SideBarProps {
@@ -32,16 +24,8 @@ interface SideBarProps {
   onToggle?: (isOpen: boolean) => void;
   items: ISideBarItem[];
   loading?: boolean;
-  header?: {
-    title: string;
-    subtitle?: string;
-    avatar?: React.ReactNode;
-  };
-  footer?: {
-    label: string;
-    onClick?: () => void;
-    icon?: React.ReactNode;
-  };
+  header?: ISideBarLinkHeaderProps;
+  footer?: ISideBarLinkFooterProps;
   className?: string;
   position?: 'left' | 'right';
   width?: 'sm' | 'md' | 'lg' | 'xl';
@@ -152,7 +136,7 @@ const SideBar: React.FC<SideBarProps> = ({
         {header?.avatar && isCollapsed && (
           <div className="p-4 border-b border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-center">
-              {header.avatar}
+              {<header.avatar />}
             </div>
           </div>
         )}

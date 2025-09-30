@@ -1,15 +1,19 @@
 "use client";
 
-import React from 'react';
-import { Header, HeaderNavItem } from '@widgets/header';
-import { Card, CardBody } from '@ui-kit/ui/Card';
-import { Title, Text } from '@ui-kit/ui/Font';
+import React, { useMemo } from 'react';
+import { Header } from '@widgets/header';
+import { HeaderNavItem, linksConfig } from '@core/config/config.core';
+import { usePathname } from 'next/navigation';
+
 
 function HeaderContainer() {
 
- 
+  const pathname = usePathname();
 
-  const navigationItems: HeaderNavItem[] = [];
+  const navigationItems: HeaderNavItem[] = useMemo(() => linksConfig.navigation.map((item) => ({
+    ...item,
+    active: item.href === pathname
+  })), [pathname]);
 
  
 
@@ -19,7 +23,6 @@ function HeaderContainer() {
 
   return (
     <div className="sticky top-0 z-0">
-      {/* Header */}
       <Header
         title="Mini Gallery"
         subtitle="Коллекция лучших фотографий"
@@ -29,16 +32,9 @@ function HeaderContainer() {
           </div>
         }
         navigation={navigationItems}
-
-
- 
         variant="primary"
         sticky={true}
       />
-
-
-
-    
     </div>
   );
 }

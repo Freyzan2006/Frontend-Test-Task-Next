@@ -5,7 +5,9 @@ import { Button } from '@ui-kit/ui/Button';
 
 import { LinkApp } from '@ui-kit/ui/LinkApp';
 import { Text } from '@ui-kit/ui/Font/Text';
-import { ISideBarItem } from './Sidebar';
+import { ISideBarItem } from '@core/config/config.core';
+
+
 
 
 interface SideBarItemProps {
@@ -19,9 +21,11 @@ interface SideBarItemProps {
 const SideBarItem: React.FC<SideBarItemProps> = ({ 
   item, 
   collapsed, 
-  onItemClick 
 }) => {
-  const { label, icon, href, active, disabled, badge } = item;
+  const { label, icon, href, active, badge } = item;
+
+  
+
 
   const content = (
     <div className={`
@@ -36,7 +40,7 @@ const SideBarItem: React.FC<SideBarItemProps> = ({
           ${active ? 'text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-400'}
           ${collapsed ? 'w-5 h-5' : 'w-4 h-4'}
         `}>
-          {icon}
+          {item.icon && <item.icon />}
         </div>
       )}
 

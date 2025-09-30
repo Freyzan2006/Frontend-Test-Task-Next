@@ -78,11 +78,9 @@ export const CreatePhotoForm: React.FC = () => {
     toggleModalForm();
   };
 
-  // Следим за значением файлов для валидации
-  const filesValue = watch("files");
 
   return (
-    <Card>
+    <Card className="w-full">
       <TitleTextGroup title="Фотографии" text="Добавить фотографию" gap="sm" />
       <Button onClick={toggleModalForm}>Добавить фотографию</Button>
 

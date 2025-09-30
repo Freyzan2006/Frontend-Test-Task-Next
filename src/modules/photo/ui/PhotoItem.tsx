@@ -31,6 +31,7 @@ export const PhotoItem: React.FC<IPhotoItemProps> = ({ photo }) => {
                 className="w-full h-48 object-cover" 
                 width={photo.previewWidth}
                 height={photo.previewHeight}
+                property = "lazy"
             />
             <Title level="h3">{photo.user}</Title>
             <div className="flex justify-center items-center gap-3">

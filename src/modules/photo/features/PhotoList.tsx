@@ -4,7 +4,7 @@ import { Card } from "@ui-kit/ui/Card";
 
 import { usePhotos } from "../hooks/usePhotos.hook";
 import { TitleTextGroup } from "@ui-kit/ui/Font";
-import { PhotoItem } from "./PhotoItem";
+import { PhotoItem } from "../ui/PhotoItem";
 import { Loading } from "@ui-kit/ui/Loading";
 import { Alert } from "@ui-kit/ui/Alert";
 

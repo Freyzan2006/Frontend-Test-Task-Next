@@ -1,6 +1,13 @@
+
+
 import { injectable } from "inversify";
 import { Photo } from "../entity/photo.entity";
 import { ListPhotoDto } from "../dto/listPhoto.dto";
+import { Axios } from "axios";
+import { newPhotoClient } from "../client/photo.client";
+
+
+
 
 export interface IPhotoApi {
     findAllPhoto(): Promise<ListPhotoDto>;
@@ -11,51 +18,33 @@ export interface IPhotoApi {
 
 @injectable()
 export class PhotoApi implements IPhotoApi {
-    private readonly baseUrl = '/api/photos';
+    private readonly baseUrl: string;
+    private readonly client: Axios;
 
+    constructor() {
+        this.baseUrl = "/api/photos";
+        this.client = newPhotoClient(this.baseUrl);
+    }
 
     async findAllPhoto(): Promise<ListPhotoDto> {
-        const response = await fetch(this.baseUrl);
-        if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.message || 'Failed to fetch photos');
-        }
-        return response.json();
+        const response = await this.client.get<ListPhotoDto>('');
+        return response.data;
     }
 
     async findPhotoById(id: string): Promise<Photo> {
-        const response = await fetch(`${this.baseUrl}/${id}`);
-        if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.message || 'Failed to fetch photo');
-        }
-        return response.json();
+        const response = await this.client.get<Photo>(`/${id}`);
+        return response.data;
     }
 
     async uploadPhoto(file: File): Promise<Photo> {
         const formData = new FormData();
         formData.append('file', file);
         
-        const response = await fetch(`${this.baseUrl}/upload`, {
-            method: 'POST',
-            body: formData,
-        });
-        
-        if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.message || 'Failed to upload photo');
-        }
-        return response.json();
+        const response = await this.client.post<Photo>('/upload', formData);
+        return response.data;
     }
 
     async deletePhoto(id: number): Promise<void> {
-        const response = await fetch(`${this.baseUrl}/${id}`, {
-            method: 'DELETE',
-        });
-        
-        if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.message || 'Failed to delete photo');
-        }
+        await this.client.delete<void>(`/${id}`);
     }
 }

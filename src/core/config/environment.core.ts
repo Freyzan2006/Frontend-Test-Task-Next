@@ -15,7 +15,6 @@ export class Environment implements IEnvironment {
 
     public get(key: TRequiredVariables): string {
         const value = process.env[key];
-        console.log(value);
         if (!value) throw new NotFoundEnvVariable("Variable " + key + " not found");
         return value;
     }
